@@ -1,0 +1,25 @@
+[
+    {
+      "userId": 1,
+      "phoneNumber": "9123456789",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "role": "user",
+      "dob": "1990-01-01",
+    },
+    {
+      "userId": 2,
+      "phoneNumber": "9123456790",
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "role": "admin",
+      "dob": "1985-05-15",
+    },
+    {
+      "userId": 3,
+      "phoneNumber": "9123456791",
+      "name": "Michael Johnson",
+      "email": "michael@example.com",
+      "role": "user",
+      "dob": "1992-07-20",
+    }]

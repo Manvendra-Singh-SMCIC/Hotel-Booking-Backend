@@ -1,0 +1,56 @@
+[
+    {
+      "reviewId": 1,
+      "uid": 1,
+      "hotelId": 1,
+      "hid": 1,
+      "rating": 4,
+      "review": "Good",
+
+    },
+    {
+      "reviewId": 2,
+      "uid": 2,
+      "hotelId": 1,
+      "hid": 1,
+      "rating": 4,
+      "review": "Good",
+
+    },
+    {
+      "reviewId": 3,
+      "uid": 3,
+      "hotelId": 1,
+      "hid": 1,
+      "rating": 4,
+      "review": "Nice",
+
+    },
+    {
+      "reviewId": 4,
+      "uid": 3,
+      "hotelId": 2,
+      "hid": 2,
+      "rating": 4,
+      "review": "Nice",
+
+    },
+    {
+      "reviewId": 5,
+      "uid": 3,
+      "hotelId": 3,
+      "hid": 3,
+      "rating": 4,
+      "review": "Nice",
+
+    },
+    {
+      "reviewId": 6,
+      "uid": 2,
+      "hotelId": 2,
+      "hid": 2,
+      "rating": 4,
+      "review": "Cool",
+
+    }
+  ]
