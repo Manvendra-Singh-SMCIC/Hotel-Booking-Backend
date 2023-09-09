@@ -48,6 +48,7 @@ public class Hotel {
 	private String location;
 	private int discCost;
 	private String popularAmenities;
+	private int ownerId;
 
 	@Lob
 	@Column(columnDefinition = "LONGTEXT")

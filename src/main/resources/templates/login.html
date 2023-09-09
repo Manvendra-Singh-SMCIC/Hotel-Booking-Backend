@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="" th:href="@{/css/login.css}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Easy Yatra</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<div class="admin-panel">
+					<form novalidate th:action="@{/submitlogin}" method="post" th:object="${LOGINDATA}">
+						
+						<div class="form-group">
+							<label for="email_field">Email address</label>
+							<input 
+							type="email" 
+							class="form-control" 
+							th:classappend="${#fields.hasErrors('email')?'is-invalid':''}"
+							id="email" 
+							name="email"
+							th:value="${LOGINDATA.email}"
+							aria-describedby="emailHelp" 
+							placeholder="Enter email"/>
+							<div class="invalid-feedback" th:each="e : ${#fields.errors('email')}" th:text="${e}"></div>
+						</div>
+						
+						<div class="form-group">
+							<label for="exampleInputPassword1">Password</label>
+							<input 
+							type="password" 
+							class="form-control" 
+							th:classappend="${#fields.hasErrors('password')?'is-invalid':''}"
+							id="password" 
+							name="password"
+							th:value="${LOGINDATA.password}"
+							placeholder="Password"/>
+							<div class="invalid-feedback" th:each="e : ${#fields.errors('password')}" th:text="${e}"></div>
+						</div>
+						<a href="/signup" style="color: black;">New here? Sign Up</a>
+						<div class="submitbtn">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>

@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://containers-us-west-172.railway.app:6780/railway
-    username: root
-    password: wioVgvEcJJYmIGgT2zoW
+    url: jdbc:mysql://localhost:3306/hotels
+    username: DataBase
+    password: m@100@13@8
   jpa:
     show-sql: true
     hibernate:
@@ -19,6 +19,8 @@ spring:
   devtools:
     restart:
       enabled: true
-  image: images/
 server:
   port: 9191
+  error:
+    whitelabel:
+      enabled: false

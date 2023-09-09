@@ -25,7 +25,7 @@ import spring.boot.service.RoomImageService;
 
 @RestController
 @RequestMapping("/api/v1/roomImages")
-public class RooImageController {
+public class RoomImageController {
 
 	@Autowired
 	private RoomImageService service;

@@ -46,6 +46,7 @@ public class UserController {
 		service.add(user);
 		return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseMessage("added"));
 	}
+	
 	@PostMapping("addAll")
 	public ResponseEntity<ResponseMessage> addAll(@RequestBody List<User> users) {
 		service.addAll(users);
@@ -73,8 +74,15 @@ public class UserController {
 	}
 
 	@GetMapping("getByEmail")
-	public ResponseEntity<Response<User>> getByState(@RequestParam String email) {
+	public ResponseEntity<Response<User>> getByEmail(@RequestParam String email) {
 		List<User> list = service.findByEmail(email);
+		String message = list.size() != 0 ? "found" : "not found";
+		return ResponseEntity.status(HttpStatus.OK).body(new Response<User>(list, message));
+	}
+	
+	@GetMapping("getByEmailAndPassword")
+	public ResponseEntity<Response<User>> getByEmailAndPassword(@RequestParam String email, @RequestParam String password) {
+		List<User> list = service.findByEmailAndPassword(email,password);
 		String message = list.size() != 0 ? "found" : "not found";
 		return ResponseEntity.status(HttpStatus.OK).body(new Response<User>(list, message));
 	}

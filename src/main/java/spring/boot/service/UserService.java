@@ -26,4 +26,6 @@ public interface UserService {
 	List<User> findByName(String name);
 	
 	List<User> findByEmail(String email);
+	
+	List<User> findByEmailAndPassword(String email, String password);
 }

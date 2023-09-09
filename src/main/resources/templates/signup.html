@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="" th:href="@{/css/signup.css}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<title>Easy Yatra</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<div class="admin-panel">
+					<form novalidate th:action="@{/submitsignup}" method="post" th:object="${SIGNUPDATA}">
+						
+						<div class="form-group">
+							<label for="email_field">Email address</label>
+							<input 
+							type="email" 
+							class="form-control" 
+							th:classappend="${#fields.hasErrors('email')?'is-invalid':''}"
+							id="email" 
+							name="email"
+							th:value="${SIGNUPDATA.email}"
+							aria-describedby="emailHelp" 
+							placeholder="Enter email"/>
+							<div class="invalid-feedback" th:each="e : ${#fields.errors('email')}" th:text="${e}"></div>
+						</div>
+						
+						<div class="form-group">
+							<label for="name_field">Name</label>
+							<input 
+							type="text" 
+							class="form-control" 
+							th:classappend="${#fields.hasErrors('name')?'is-invalid':''}"
+							id="name" 
+							name="name"
+							th:value="${SIGNUPDATA.name}"
+							aria-describedby="nameHelp" 
+							placeholder="Enter Name"/>
+							<div class="invalid-feedback" th:each="e : ${#fields.errors('name')}" th:text="${e}"></div>
+						</div>
+						
+							
+						<div class="form-group">
+							<label for="phone_field">Phone Number</label>
+							<input 
+							type="number" 
+							class="form-control" 
+							th:classappend="${#fields.hasErrors('phoneNumber')?'is-invalid':''}"
+							id="phoneNumber" 
+							name="phoneNumber"
+							th:value="${SIGNUPDATA.phoneNumber}"
+							aria-describedby="phoneHelp" 
+							placeholder="Enter Phone Number"/>
+							<div class="invalid-feedback" th:each="e : ${#fields.errors('phoneNumber')}" th:text="${e}"></div>
+						</div>
+						
+						<div class="form-group">
+                            <label for="dob_field">Date of Birth</label>
+                            <input
+                            type="date"
+                            class="form-control"
+                            id="dob"
+                            name="dob"
+                            value="${SIGNUPDATA.dob ? #dates.format(SIGNUPDATA.dob, 'yyyy-MM-dd') : ''}"
+                            aria-describedby="dobHelp"
+                            placeholder="Select DOB" />    
+                            <div class="invalid-feedback" th:each="e : ${#fields.errors('dob')}" th:text="${e}"></div>                
+                        </div>
+
+						<div class="form-group">
+							<label for="password_field">Password</label>
+							<input 
+							type="password" 
+							class="form-control" 
+							th:classappend="${#fields.hasErrors('password')?'is-invalid':''}"
+							id="password" 
+							name="password"
+							th:value="${SIGNUPDATA.password}"
+							placeholder="Password"/>
+							<div class="invalid-feedback" th:each="e : ${#fields.errors('password')}" th:text="${e}"></div>
+						</div>
+						
+						<a href="/login" style="color: black;">Already a user? Sign In</a>
+						<div class="submitbtn">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>
